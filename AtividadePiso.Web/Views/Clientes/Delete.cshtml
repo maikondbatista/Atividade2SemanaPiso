@@ -1,0 +1,48 @@
+﻿@model AtividadePiso.Web.Models.Cliente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Você tem certeza que deseja excluir este Cliente?</h3>
+<div>
+    <h4>Dados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeCompletoRazaoSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeCompletoRazaoSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApelidoNomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApelidoNomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPFCNPJ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPFCNPJ)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
